@@ -694,6 +694,7 @@ scope MIDI {
     // The menu display position is controlled by the `order` argument, not by file position.
     insert_midi(DBZSB3CREDITS, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits", butouden3, 75)
     insert_midi(CAMMY_STAGE, OS.TRUE, OS.TRUE, "Cammy's Stage", ssf2, 290)
+    insert_midi(KEN_STAGE, OS.TRUE, OS.TRUE, "Ken's Stage", ssf2, 291)
 
     pushvar origin, base
 
