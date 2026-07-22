@@ -2555,6 +2555,7 @@ scope Toggles {
     // @ Description
     // Stage Toggles
     head_stage_settings:
+    evaluate toggle_index_sss_layout(num_toggles)
     entry_sss_layout:;                          entry("Stage Select Layout", Menu.type.INT, sss.NORMAL, sss.TOURNAMENT, sss.NORMAL, sss.NORMAL, 0, 1, OS.NULL, string_table_sss_layout, OS.NULL, entry_hazard_mode)
     entry_hazard_mode:;                         entry("Hazard Mode", Menu.type.INT, hazard_mode.NORMAL, hazard_mode.NORMAL, hazard_mode.NORMAL, hazard_mode.NORMAL, 0, 3, OS.NULL, string_table_hazard_mode, OS.NULL, entry_whispy_mode)
     entry_whispy_mode:;                         entry("Whispy Mode", Menu.type.INT, whispy_mode.NORMAL, whispy_mode.NORMAL, whispy_mode.NORMAL, whispy_mode.JAPANESE, 0, 3, OS.NULL, string_table_whispy_mode, OS.NULL, entry_saffron_poke_rate)
@@ -2902,11 +2903,21 @@ scope Toggles {
     // Overrides a single toggle in the Impecable defaults array.
     // index - 0-based word index into the defaults array (== num_toggles captured before the entry)
     // value - value to store
+    // NOTE: {index} is substituted as text, so it MUST stay wrapped in its own parentheses below.
+    // Passing an expression (e.g. "a + b") without them makes "* 4" bind to the last term only.
     macro set_impecable_default(index, value) {
         pushvar origin, base
-        origin {IMPECABLE_DEFAULTS_ORIGIN} + ({index} * 4)
+        origin {IMPECABLE_DEFAULTS_ORIGIN} + (({index}) * 4)
         dw {value}
         pullvar base, origin
+    }
+
+    // @ Description
+    // Enables a single random music track in the Impecable defaults array.
+    // track - file_name of the MIDI (as passed to insert_midi), not the display title
+    macro add_to_impecable_music(track) {
+        evaluate abs_index({first_music_toggle} + {music_toggle_{track}})
+        set_impecable_default({abs_index}, OS.TRUE)
     }
 
     // Remix Settings
@@ -2916,13 +2927,16 @@ scope Toggles {
     set_impecable_default({toggle_index_random_music}, OS.TRUE)         // Random Music = ON
     set_impecable_default({toggle_index_menu_music}, 12)                // Menu Music = MARIO PARTY
 
+    // Stage Settings
+    set_impecable_default({toggle_index_sss_layout}, sss.TOURNAMENT)    // Stage Select Layout = TOURNAMENT
+
     // Random Music Toggles: turn everything off, then enable only the Impecable tracks
     evaluate i({first_music_toggle})
     while {i} < {last_music_toggle} {
         set_impecable_default({i}, OS.FALSE)
         evaluate i({i} + 1)
     }
-    set_impecable_default({first_music_toggle} + {music_toggle_ROCKSOLID}, OS.TRUE)
+    add_to_impecable_music(ROCKSOLID)
 
     profiles:
     dw profile_defaults_CE

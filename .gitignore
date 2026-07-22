@@ -1,6 +1,6 @@
 # ROMs
 *.z64
-#*.rom
+*.rom
 
 # Saves
 *.sra
