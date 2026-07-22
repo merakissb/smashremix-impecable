@@ -529,6 +529,7 @@ scope MIDI {
     insert_midi(IRON_BLUE_INTENTION, OS.TRUE, OS.TRUE, "Iron-Blue Intention", castlevania_bloodlines, 132)
     insert_midi(DRACULAS_TEARS, OS.TRUE, OS.TRUE, "Dracula's Tears", castlevania_dos, 74)
     insert_midi(DBZSB3CREDITS, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits", butouden3, 75)
+    insert_midi(DBZSB3CREDITS2, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits (v2)", butouden3, 75)
     insert_midi(WARIOWARE, OS.TRUE, OS.TRUE, "WarioWare, Inc.", warioware, 279)
     insert_midi(BLOODY_TEARS, OS.TRUE, OS.TRUE, "Bloody Tears", castlevania_2, 26)
     insert_midi(FROZEN_HILLSIDE, OS.TRUE, OS.TRUE, "Frozen Hillside", kirbyair, 103)
