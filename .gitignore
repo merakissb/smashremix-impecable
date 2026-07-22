@@ -1,7 +1,3 @@
-# ROMs
-*.z64
-*.rom
-
 # Saves
 *.sra
 *.srm
@@ -15,11 +11,6 @@
 build/original/*.bin
 build/original/*.vpk
 build/original/*.txt
-
-# /roms
-/roms/*
-!/roms/filename_overrides.txt
-!/roms/Place legally acquired rom titled ssb.rom here.txt
 
 # Python (scripts)
 *.pyc
