@@ -528,8 +528,6 @@ scope MIDI {
     insert_midi(DRACULAS_CASTLE, OS.TRUE, OS.TRUE, "Dracula's Castle", castlevania_sotn, 73)
     insert_midi(IRON_BLUE_INTENTION, OS.TRUE, OS.TRUE, "Iron-Blue Intention", castlevania_bloodlines, 132)
     insert_midi(DRACULAS_TEARS, OS.TRUE, OS.TRUE, "Dracula's Tears", castlevania_dos, 74)
-    insert_midi(DBZSB3CREDITS, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits", butouden3, 75)
-    insert_midi(DBZSB3CREDITS2, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits (v2)", butouden3, 75)
     insert_midi(WARIOWARE, OS.TRUE, OS.TRUE, "WarioWare, Inc.", warioware, 279)
     insert_midi(BLOODY_TEARS, OS.TRUE, OS.TRUE, "Bloody Tears", castlevania_2, 26)
     insert_midi(FROZEN_HILLSIDE, OS.TRUE, OS.TRUE, "Frozen Hillside", kirbyair, 103)
@@ -687,6 +685,14 @@ scope MIDI {
     insert_midi(GREENGARDEN, OS.TRUE, OS.TRUE, "Green Garden", bomberman, 122)
     insert_midi(BLUE_RESORT, OS.TRUE, OS.TRUE, "Blue Resort", bomberman, 27)
     insert_midi(LOST, OS.TRUE, OS.TRUE, "Lost", dream, 149)
+
+    // IMPORTANT: new MIDIs MUST be appended at the END of this list.
+    // The MIDI id is derived from position in the music table (see MIDI_{name}_ID above),
+    // so inserting mid-list shifts the ids of every track below it and breaks the
+    // hardcoded BGM.menu.* / BGM.stage.* constants in BGM.asm.
+    // The menu display position is controlled by the `order` argument, not by file position.
+    insert_midi(DBZSB3CREDITS, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits", butouden3, 75)
+    insert_midi(DBZSB3CREDITS2, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits (v2)", butouden3, 75)
 
     pushvar origin, base
 
