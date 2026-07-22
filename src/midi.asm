@@ -692,7 +692,7 @@ scope MIDI {
     // hardcoded BGM.menu.* / BGM.stage.* constants in BGM.asm.
     // The menu display position is controlled by the `order` argument, not by file position.
     insert_midi(DBZSB3CREDITS, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits", butouden3, 75)
-    insert_midi(DBZSB3CREDITS2, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits (v2)", butouden3, 75)
+    insert_midi(TRUNKS2, OS.TRUE, OS.TRUE, "Trunks", butouden3, 262)
 
     pushvar origin, base
 
