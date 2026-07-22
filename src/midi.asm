@@ -354,6 +354,7 @@ scope MIDI {
     add_game(balloonfight, "Balloon Fight")
     add_game(paneldepon, "Panel de Pon")
     add_game(dream, "Dream: Land of Giants")
+    add_game(ssf2, "Super Street Fighter II")
     OS.align(4)
 
     // insert custom midi files
@@ -693,6 +694,7 @@ scope MIDI {
     // The menu display position is controlled by the `order` argument, not by file position.
     insert_midi(DBZSB3CREDITS, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits", butouden3, 75)
     insert_midi(TRUNKS1, OS.TRUE, OS.TRUE, "Trunks", butouden3, 262)
+    insert_midi(CAMMYSTAGE, OS.TRUE, OS.TRUE, "Cammy's Stage", ssf2, 290)
 
     pushvar origin, base
 
