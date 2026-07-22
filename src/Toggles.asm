@@ -2937,9 +2937,16 @@ scope Toggles {
         evaluate i({i} + 1)
     }
     add_to_impecable_music(ROCKSOLID)
+    add_to_impecable_music(CLOCKTOWER)
+    add_to_impecable_music(GANGPLANK)
+    add_to_impecable_music(TOWEROFHEAVEN)          // Luna Ascension
+    add_to_impecable_music(OLE)
+    add_to_impecable_music(SMB2OVERWORLD)
+    add_to_impecable_music(MORRIGAN)
     add_to_impecable_music(CAMMY_STAGE)
     add_to_impecable_music(KEN_STAGE)
     add_to_impecable_music(TRUNKS_BATTLE)
+    add_to_impecable_music(MEGAMAN3_TITLE)
 
     profiles:
     dw profile_defaults_CE

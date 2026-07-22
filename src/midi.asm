@@ -330,6 +330,7 @@ scope MIDI {
     add_game(shantae, "Shantae")
     add_game(megamanbc, "Megaman: Battle & Chase")
     add_game(megamanscr, "Mega Man Soccer")
+    add_game(megaman3, "Mega Man 3")
     add_game(doom, "DOOM")
     add_game(doom2, "DOOM II: Hell on Earth")
     add_game(dukenukem3d, "Duke Nukem 3D")
@@ -697,6 +698,7 @@ scope MIDI {
     insert_midi(CAMMY_STAGE, OS.TRUE, OS.TRUE, "Cammy's Stage", ssf2, 900)
     insert_midi(KEN_STAGE, OS.TRUE, OS.TRUE, "Ken's Stage", ssf2, 901)
     insert_midi(TRUNKS_BATTLE, OS.TRUE, OS.TRUE, "Trunks Battle", butouden3, 902)
+    insert_midi(MEGAMAN3_TITLE, OS.TRUE, OS.TRUE, "Mega Man 3 Title", megaman3, 903)
 
     pushvar origin, base
 
