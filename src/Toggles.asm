@@ -1105,7 +1105,8 @@ scope Toggles {
         constant TE(1)
         constant NE(2)
         constant JP(3)
-        constant CUSTOM(4)
+        constant IMPECABLE(4)
+        constant CUSTOM(5)
     }
 
     // @ Description
@@ -1114,6 +1115,7 @@ scope Toggles {
     profile_te:; db "Tournament", 0x00
     profile_ne:; db "Netplay", 0x00
     profile_jp:; db "Japanese", 0x00
+    profile_impecable:; db "Impecable", 0x00
     profile_custom:; db "Custom", 0x00
     profile_semicomp:; db "Semi-Competitive", 0x00
     current_profile:; db "Current Profile: ", 0x00
@@ -1140,6 +1142,7 @@ scope Toggles {
     dw profile_te
     dw profile_ne
     dw profile_jp
+    dw profile_impecable
     dw profile_custom
 
     // @ Description
@@ -2364,7 +2367,7 @@ scope Toggles {
     // @ Description
     // Contains list of submenus.
     head_super_menu:
-    Menu.entry("Load Profile:", Menu.type.INT, OS.FALSE, 0, 3, load_profile_, OS.NULL, string_table_profile, OS.NULL, entry_remix_settings)
+    Menu.entry("Load Profile:", Menu.type.INT, OS.FALSE, 0, profile.IMPECABLE, load_profile_, OS.NULL, string_table_profile, OS.NULL, entry_remix_settings)
     entry_remix_settings:; Menu.entry_title("Remix Settings", show_remix_settings_, entry_gameplay_settings)
     entry_gameplay_settings:; Menu.entry_title("Gameplay Settings", show_gameplay_settings_, entry_music_settings)
     entry_music_settings:; Menu.entry_title("Music Settings", show_music_settings_, entry_stage_settings)
@@ -2376,6 +2379,7 @@ scope Toggles {
     // @ Description
     // Miscellaneous Toggles
     head_remix_settings:
+    evaluate toggle_index_skip_results(num_toggles)
     entry_skip_results_screen:;         entry("Skip Results Screen", Menu.type.INT, 0, 0, 1, 0, 0, 2, OS.NULL, string_table_skip_results, OS.NULL, entry_hold_to_pause)
     entry_hold_to_pause:;               entry_bool("Hold To Pause", OS.FALSE, OS.TRUE, OS.TRUE, OS.FALSE, entry_css_panel_menu)
     entry_css_panel_menu:;              entry_bool("CSS Panel Menu", OS.TRUE, OS.FALSE, OS.TRUE, OS.TRUE, entry_practice_overlay)
@@ -2457,8 +2461,10 @@ scope Toggles {
     // Random Music Toggles
     head_music_settings:
     entry_play_music:;                      entry_bool("Play Music", OS.TRUE, OS.TRUE, OS.TRUE, OS.TRUE, entry_random_music)
+    evaluate toggle_index_random_music(num_toggles)
     entry_random_music:;                    entry_bool("Random Music", OS.FALSE, OS.FALSE, OS.TRUE, OS.FALSE, entry_preserve_salty_song)
     entry_preserve_salty_song:;             entry_bool("Salty Runback Preserves Song", OS.FALSE, OS.FALSE, OS.FALSE, OS.FALSE, entry_menu_music)
+    evaluate toggle_index_menu_music(num_toggles)
     entry_menu_music:;                      entry("Menu Music", Menu.type.INT, 0, 0, 1, 0, 0, menu_music.MAX_VALUE, play_menu_music_, string_table_menu_music, OS.NULL, entry_show_music_title)
     entry_show_music_title:;                entry_bool("Music Title at Match Start", OS.TRUE, OS.FALSE, OS.TRUE, OS.TRUE, entry_bgm_volume)
     entry_bgm_volume:;                      entry("BGM Volume", Menu.type.INT, 10, 10, 10, 10, 0, 10, update_bgm_volume, string_table_volume, OS.NULL, entry_fgm_volume)
@@ -2884,11 +2890,46 @@ scope Toggles {
     profile_defaults_NE:; write_defaults_for(NE)
     profile_defaults_JP:; write_defaults_for(JP)
 
+    // @ Description
+    // Team CL / Impecable profile.
+    // Rather than adding a 5th default to every entry macro (hundreds of call sites), this
+    // profile inherits the Community defaults and then overrides only the toggles we care about.
+    // Same approach as add_music_profile/add_to_music_profile.
+    evaluate IMPECABLE_DEFAULTS_ORIGIN(origin())
+    profile_defaults_IMPECABLE:; write_defaults_for(CE)
+
+    // @ Description
+    // Overrides a single toggle in the Impecable defaults array.
+    // index - 0-based word index into the defaults array (== num_toggles captured before the entry)
+    // value - value to store
+    macro set_impecable_default(index, value) {
+        pushvar origin, base
+        origin {IMPECABLE_DEFAULTS_ORIGIN} + ({index} * 4)
+        dw {value}
+        pullvar base, origin
+    }
+
+    // Remix Settings
+    set_impecable_default({toggle_index_skip_results}, 1)               // Skip Results Screen = ON
+
+    // Music Settings
+    set_impecable_default({toggle_index_random_music}, OS.TRUE)         // Random Music = ON
+    set_impecable_default({toggle_index_menu_music}, 12)                // Menu Music = MARIO PARTY
+
+    // Random Music Toggles: turn everything off, then enable only the Impecable tracks
+    evaluate i({first_music_toggle})
+    while {i} < {last_music_toggle} {
+        set_impecable_default({i}, OS.FALSE)
+        evaluate i({i} + 1)
+    }
+    set_impecable_default({first_music_toggle} + {music_toggle_ROCKSOLID}, OS.TRUE)
+
     profiles:
     dw profile_defaults_CE
     dw profile_defaults_TE
     dw profile_defaults_NE
     dw profile_defaults_JP
+    dw profile_defaults_IMPECABLE
 
     variable num_music_profiles(0)
     variable num_stage_profiles(0)
