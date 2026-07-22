@@ -2946,6 +2946,7 @@ scope Toggles {
     add_to_impecable_music(CAMMY_STAGE)
     add_to_impecable_music(KEN_STAGE)
     add_to_impecable_music(TRUNKS_BATTLE)
+    add_to_impecable_music(RHYTMICAL_BUSTLE)
 
     profiles:
     dw profile_defaults_CE
