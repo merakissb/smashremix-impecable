@@ -1,6 +1,36 @@
 # Smash Remix
 *A Super Smash Bros. 64 Mod Organized by The_Smashfather*
 
+---
+
+## 🇨🇱 Build Impecable — Edición Team CL
+
+> Fork no oficial mantenido por la comunidad chilena de Smash 64.
+
+Esta build viene con el preset de música **"Impecable"**, decidido democráticamente por el Team CL
+y los Impecables tras un debate largo, tenso y absolutamente innecesario.
+
+**Resultado de la votación:**
+
+| Pista | Votos |
+|---|---|
+| Rock Solid (Conker's Bad Fur Day) | Todos |
+| Cualquier otra cosa | 0 |
+
+Se cerró la discusión. La playlist tiene exactamente una canción. Es la correcta.
+
+Con `Random Music` activado y el perfil **Impecable** cargado, suena Rock Solid. Siempre.
+No es un bug, es el consenso.
+
+Saludos a **Dannyssb**, **alpha**, **diego**, **merakissb**, **Afro** y a toda la comu que lleva
+años haciendo que esto siga vivo. 🇨🇱
+
+*Para cargarlo: `OPTION` → `Music Settings` → `Load Profile:` → `Impecable` → botón A.*
+
+*(Se aceptan PRs para agregar más pistas al preset. Serán revisados. Probablemente rechazados.)*
+
+---
+
 ## Building
 ### THIS IS ONLY FOR THOSE INTERESTED IN THE SOURCE CODE OF THE MOD. PLEASE DOWNLOAD THE RELEASE VERSION BY CLICKING THE RELEASE TAB.
 The original xdelta will generate a smash rom that is compatible with our ASM code. Much of our edits are done within
