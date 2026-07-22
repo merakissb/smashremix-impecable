@@ -4,5 +4,4 @@ add_music_profile(impecable, "Impecable")
 // Then call add_to_music_profile for every track you want toggled on for this profile
 add_to_music_profile(impecable, ROCKSOLID)
 add_to_music_profile(impecable, DBZSB3CREDITS)
-add_to_music_profile(impecable, TRUNKS1)
 add_to_music_profile(impecable, CAMMY_STAGE)
