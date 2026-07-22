@@ -692,9 +692,11 @@ scope MIDI {
     // so inserting mid-list shifts the ids of every track below it and breaks the
     // hardcoded BGM.menu.* / BGM.stage.* constants in BGM.asm.
     // The menu display position is controlled by the `order` argument, not by file position.
-    insert_midi(DBZSB3CREDITS, OS.TRUE, OS.TRUE, "Dragon Ball Z Credits", butouden3, 75)
-    insert_midi(CAMMY_STAGE, OS.TRUE, OS.TRUE, "Cammy's Stage", ssf2, 290)
-    insert_midi(KEN_STAGE, OS.TRUE, OS.TRUE, "Ken's Stage", ssf2, 291)
+    // Pistas propias: order 900+ para que queden siempre al final del menu,
+    // por encima de cualquier pista que agregue el proyecto upstream (max actual: 289).
+    insert_midi(CAMMY_STAGE, OS.TRUE, OS.TRUE, "Cammy's Stage", ssf2, 900)
+    insert_midi(KEN_STAGE, OS.TRUE, OS.TRUE, "Ken's Stage", ssf2, 901)
+    insert_midi(TRUNKS_BATTLE, OS.TRUE, OS.TRUE, "Trunks Battle", butouden3, 902)
 
     pushvar origin, base
 
@@ -1525,6 +1527,13 @@ scope MIDI {
 
     add_priority_override({MIDI.id.ELADARD}, 54, 0x7F)
     add_priority_override({MIDI.id.ELADARD}, 55, 0x7F)
+
+    // Ken's Stage: 7 pistas simultaneas saturan las voces hacia el final.
+    // Se protege base ritmica y melodia; brass (5) y guitarras (41) van dobladas
+    // en dos pistas cada una, asi que son las que pueden ceder sin romper el tema.
+    add_priority_override({MIDI.id.KEN_STAGE}, 18, 0x7F)    // Main Percussion
+    add_priority_override({MIDI.id.KEN_STAGE}, 13, 0x7F)    // Electric Bass
+    add_priority_override({MIDI.id.KEN_STAGE}, 30, 0x7F)    // Trombone (melodia)
 
     add_priority_override({MIDI.id.DRAKE_LAKE}, 1, 0x7F)
 
