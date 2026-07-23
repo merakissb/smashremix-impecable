@@ -333,6 +333,7 @@ scope MIDI {
     add_game(megamanbc, "Megaman: Battle & Chase")
     add_game(megamanscr, "Mega Man Soccer")
     add_game(megaman3, "Mega Man 3")
+    add_game(megaman7, "Mega Man 7")
     add_game(meltyblood, "Melty Blood")
     add_game(doom, "DOOM")
     add_game(doom2, "DOOM II: Hell on Earth")
@@ -706,6 +707,7 @@ scope MIDI {
     insert_midi(DAN_DAN, OS.TRUE, OS.TRUE, "Dan Dan Kokoro Hikareteku", dbgt, 905)
     insert_midi(DBZ_SB3_CREDITS_ROLL, OS.TRUE, OS.TRUE, "Butouden 3 Credits", butouden3, 906)
     insert_midi(MEGAMAN3_TITLE, OS.TRUE, OS.TRUE, "Mega Man 3 Title", megaman3, 907)
+    insert_midi(MEGAMAN7_INTRO, OS.TRUE, OS.TRUE, "Mega Man 7 Intro", megaman7, 908)
 
     pushvar origin, base
 

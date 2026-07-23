@@ -2951,6 +2951,7 @@ scope Toggles {
     add_to_impecable_music(DAN_DAN)
     add_to_impecable_music(DBZ_SB3_CREDITS_ROLL)
     add_to_impecable_music(MEGAMAN3_TITLE)
+    add_to_impecable_music(MEGAMAN7_INTRO)
 
     profiles:
     dw profile_defaults_CE
