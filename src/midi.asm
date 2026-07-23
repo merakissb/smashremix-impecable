@@ -708,6 +708,7 @@ scope MIDI {
     insert_midi(DBZ_SB3_CREDITS_ROLL, OS.TRUE, OS.TRUE, "Butouden 3 Credits", butouden3, 906)
     insert_midi(MEGAMAN3_TITLE, OS.TRUE, OS.TRUE, "Mega Man 3 Title", megaman3, 907)
     insert_midi(MEGAMAN7_INTRO, OS.TRUE, OS.TRUE, "Mega Man 7 Intro", megaman7, 908)
+    insert_midi(GUILE_STAGE, OS.TRUE, OS.TRUE, "Guile's Stage", ssf2, 909)
 
     pushvar origin, base
 
