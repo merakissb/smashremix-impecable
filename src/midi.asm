@@ -308,6 +308,8 @@ scope MIDI {
     add_game(xenogears, "Xenogears")
     add_game(dragonking, "Dragon King: The Fighting Game")
     add_game(butouden3, "Dragon Ball Z: Super Butouden 3")
+    add_game(dbz, "Dragon Ball Z")
+    add_game(dbgt, "Dragon Ball GT")
     add_game(castlevania, "Castlevania")
     add_game(castlevania_2, "Castlevania II: Simon's Quest")
     add_game(castlevania_bloodlines, "Castlevania: Bloodlines")
@@ -699,6 +701,9 @@ scope MIDI {
     insert_midi(KEN_STAGE, OS.TRUE, OS.TRUE, "Ken's Stage", ssf2, 901)
     insert_midi(TRUNKS_BATTLE, OS.TRUE, OS.TRUE, "Trunks Battle", butouden3, 902)
     insert_midi(RHYTMICAL_BUSTLE, OS.TRUE, OS.TRUE, "Rhythmical Bustle", meltyblood, 903)
+    insert_midi(DBZ_WEGOTTAPOWER, OS.TRUE, OS.TRUE, "We Gotta Power", dbz, 904)
+    insert_midi(DAN_DAN, OS.TRUE, OS.TRUE, "Dan Dan Kokoro Hikareteku", dbgt, 905)
+    insert_midi(DBZ_SB3_CREDITS_ROLL, OS.TRUE, OS.TRUE, "Butouden 3 Credits", butouden3, 906)
 
     pushvar origin, base
 

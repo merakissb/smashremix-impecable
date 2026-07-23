@@ -2947,6 +2947,9 @@ scope Toggles {
     add_to_impecable_music(KEN_STAGE)
     add_to_impecable_music(TRUNKS_BATTLE)
     add_to_impecable_music(RHYTMICAL_BUSTLE)
+    add_to_impecable_music(DBZ_WEGOTTAPOWER)
+    add_to_impecable_music(DAN_DAN)
+    add_to_impecable_music(DBZ_SB3_CREDITS_ROLL)
 
     profiles:
     dw profile_defaults_CE
