@@ -2953,6 +2953,7 @@ scope Toggles {
     add_to_impecable_music(MEGAMAN3_TITLE)
     add_to_impecable_music(MEGAMAN7_INTRO)
     add_to_impecable_music(GUILE_STAGE)
+    add_to_impecable_music(GUNDAM_INTRO)
 
     profiles:
     dw profile_defaults_CE
