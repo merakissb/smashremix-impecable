@@ -2955,6 +2955,7 @@ scope Toggles {
     add_to_impecable_music(GUILE_STAGE)
     add_to_impecable_music(GUNDAM_INTRO)
     add_to_impecable_music(megaweathertheme)
+    add_to_impecable_music(dbz_prologueII)
 
     profiles:
     dw profile_defaults_CE

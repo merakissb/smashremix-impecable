@@ -713,6 +713,7 @@ scope MIDI {
     insert_midi(GUILE_STAGE, OS.TRUE, OS.TRUE, "Guile's Stage", ssf2, 909)
     insert_midi(GUNDAM_INTRO, OS.TRUE, OS.TRUE, "Gundam Wing Intro", gundamwing, 910)
     insert_midi(megaweathertheme, OS.TRUE, OS.TRUE, "El Tiempo", megavision, 911)
+    insert_midi(dbz_prologueII, OS.TRUE, OS.TRUE, "Prologue II", dbz, 912)
 
     pushvar origin, base
 
