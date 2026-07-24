@@ -335,6 +335,7 @@ scope MIDI {
     add_game(megaman3, "Mega Man 3")
     add_game(megaman7, "Mega Man 7")
     add_game(gundamwing, "Gundam Wing: Endless Duel")
+    add_game(megavision, "Megavision")
     add_game(meltyblood, "Melty Blood")
     add_game(doom, "DOOM")
     add_game(doom2, "DOOM II: Hell on Earth")
@@ -711,6 +712,7 @@ scope MIDI {
     insert_midi(MEGAMAN7_INTRO, OS.TRUE, OS.TRUE, "Mega Man 7 Intro", megaman7, 908)
     insert_midi(GUILE_STAGE, OS.TRUE, OS.TRUE, "Guile's Stage", ssf2, 909)
     insert_midi(GUNDAM_INTRO, OS.TRUE, OS.TRUE, "Gundam Wing Intro", gundamwing, 910)
+    insert_midi(megaweathertheme, OS.TRUE, OS.TRUE, "El Tiempo", megavision, 911)
 
     pushvar origin, base
 
