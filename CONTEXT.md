@@ -1,7 +1,7 @@
 # Contexto del proyecto — para retomar en nuevas sesiones
 
 Documento de traspaso. Leer esto da todo el contexto necesario para seguir trabajando sin
-re-derivar lo aprendido. Última actualización: 2026-07-24.
+re-derivar lo aprendido. Última actualización: 2026-07-25.
 
 ---
 
@@ -88,41 +88,44 @@ perfil "Impecable".
 
 ## Estado actual
 
-**25 canciones propias**, registradas (order 900-917) y en el perfil Impecable. Última tanda:
-2026-07-24 (13 archivos `_smash`: 8 reemplazos + 5 nuevas).
+**16 canciones propias**, registradas (order 900-915) y en el perfil Impecable. Última tanda:
+2026-07-25 (7 reemplazos + split de Trunks en V1/V2 + Top Gear nuevo + 4 borradas).
 
 | Canción | file_name | Juego | order | Notas |
 |---|---|---|---|---|
-| Cammy's Stage | CAMMY_STAGE | SSF2 | 900 | export de 1 pista fusionada (v. 2026-07-24) |
+| Cammy's Stage | CAMMY_STAGE | SSF2 | 900 | export de 1 pista fusionada |
 | Ken's Stage | KEN_STAGE | SSF2 | 901 | tiene priority_override; usuario reportó que **no loopea** (pendiente, ver abajo) |
-| Trunks Battle | TRUNKS_BATTLE | Butouden 3 | 902 | reemplazado por `trunksbattlevariable2` (mediana vol 82) |
-| Rhythmical Bustle | RHYTMICAL_BUSTLE | Melty Blood | 903 | **sin batería a propósito**: t10 ch9 en prog 16 (Pan Flute), no 18 — decisión del usuario, NO parchear |
-| We Gotta Power | DBZ_WEGOTTAPOWER | DBZ | 904 | volumen subido a mediana 117 |
+| Trunks Battle V1 | TRUNKS_BATTLE_V1 | Butouden 3 | 902 | batería reparada (prog 0→18 en 0x22cb); mediana vol 95 |
+| Trunks Battle V2 | TRUNKS_BATTLE_V2 | Butouden 3 | 903 | ex-`TRUNKS_BATTLE` (variable2); mediana vol 82 |
+| Rhythmical Bustle | RHYTMICAL_BUSTLE | Melty Blood | 904 | **sin batería a propósito**: t10 ch9 en prog 16 (Pan Flute), no 18 — decisión del usuario, NO parchear |
 | Dan Dan Kokoro Hikareteku | DAN_DAN | DBGT | 905 | ok |
-| Butouden 3 Credits | DBZ_SB3_CREDITS_ROLL | Butouden 3 | 906 | reemplazado (v. ending); mediana vol 127 (usuario pidió no tocar) |
+| Butouden 3 Credits | DBZ_SB3_CREDITS_ROLL | Butouden 3 | 906 | v. ending; mediana vol 127 (usuario pidió no tocar) |
 | Mega Man 3 Title | MEGAMAN3_TITLE | Mega Man 3 | 907 | ok |
-| Mega Man 7 Intro | MEGAMAN7_INTRO | Mega Man 7 | 908 | **bajo restaurado** (Slap + Acoustic Bass), vol 114 |
-| Guile's Stage | GUILE_STAGE | SSF2 | 909 | **ya trae percusión** (t6/t7 ch9 prog 18); mediana vol 100 |
+| Mega Man 7 Intro | MEGAMAN7_INTRO | Mega Man 7 | 908 | bajo restaurado (Slap + Acoustic Bass), vol 114 |
+| Guile's Stage | GUILE_STAGE | SSF2 | 909 | trae percusión (t6/t7 ch9 prog 18); mediana vol 100 |
 | Gundam Wing Intro | GUNDAM_INTRO | Gundam Wing | 910 | mediana vol 83 |
-| El Tiempo | megaweathertheme | Megavision | 911 | canal MEGA Chile |
-| Prologue II | dbz_prologueII | DBZ | 912 | ok, 10 loops |
-| Balrog's Stage | BALROG_STAGE | SSF2 | 913 | **nueva** 2026-07-24; 1 pista fusionada |
-| Ryu's Stage | RYU_STAGE | SSF2 | 914 | **nueva**; todo en vol 127 |
-| Littleroot Town | LITTLEROOT_TOWN | Pokemon Ruby & Sapphire | 915 | **nueva**; mediana vol 80 |
-| Pegasus Fantasy | PEGASUS_FANTASY | Saint Seiya | 916 | **nueva**; corta (2.3 KB), vol 127 |
-| Sabre Wulf | SABRE_WULF | Killer Instinct | 917 | **nueva**; tema de Sabrewulf (KI SNES); todo parejo en 100 |
+| Balrog's Stage | BALROG_STAGE | SSF2 | 911 | 1 pista fusionada |
+| Ryu's Stage | RYU_STAGE | SSF2 | 912 | todo en vol 127 |
+| Littleroot Town | LITTLEROOT_TOWN | Pokemon Ruby & Sapphire | 913 | mediana vol 80 |
+| Pegasus Fantasy | PEGASUS_FANTASY | Saint Seiya | 914 | corta (2.3 KB), vol 127 |
+| Top Gear | TOPGEAR_TRACK1 | Top Gear | 915 | **nueva** 2026-07-25; 1 pista fusionada |
 
-> Nota: el usuario pidió **NO normalizar volúmenes** en la tanda 2026-07-24 y **dejar los `.bin`
-> tal cual vienen del editor** (no byte-patchear). Respetar salvo que pida lo contrario.
+> **Borradas el 2026-07-25** (desregistradas de midi.asm + Toggles + `.bin` eliminados):
+> We Gotta Power (DBZ_WEGOTTAPOWER), El Tiempo (megaweathertheme), Prologue II (dbz_prologueII),
+> Sabre Wulf (SABRE_WULF). Con esto quedaron **huérfanos y removidos** los juegos `dbz`,
+> `megavision` y `killerinstinct`.
+>
+> Nota: el usuario pidió **NO normalizar volúmenes** y **dejar los `.bin` tal cual** salvo bugs
+> que rompan la canción (ej. prog 0/fuera de rango, que sí se parchea). Respetar salvo aviso.
 
-**Juegos agregados** en `midi.asm`: `butouden3`(preexistía), `dbz`, `dbgt`, `megaman3`,
-`megaman7`, `meltyblood`, `ssf2`, `gundamwing`, `megavision`, `saintseiya`, `killerinstinct`.
+**Juegos custom activos** en `midi.asm`: `butouden3`, `dbgt`, `megaman3`, `megaman7`,
+`meltyblood`, `ssf2`, `gundamwing`, `saintseiya`, `topgear` (+ `pokemonruby` que ya existía).
 
 **Perfil Impecable** (Random Music ON, Menu Music Mario Party, Skip Results ON, SSS Tournament):
-las 18 de arriba + ROCKSOLID, CLOCKTOWER, GANGPLANK, TOWEROFHEAVEN (Luna Ascension), OLE,
-SMB2OVERWORLD, MORRIGAN.
+las 16 de arriba + ROCKSOLID, CLOCKTOWER, GANGPLANK, TOWEROFHEAVEN (Luna Ascension), OLE,
+SMB2OVERWORLD, MORRIGAN (23 en total).
 
-**SRAM REVISION**: `0x010E`. Incrementar en cada cambio de contenido/toggles.
+**SRAM REVISION**: `0x010F`. Incrementar en cada cambio de contenido/toggles.
 
 ---
 
