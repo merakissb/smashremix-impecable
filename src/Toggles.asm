@@ -2956,6 +2956,11 @@ scope Toggles {
     add_to_impecable_music(GUNDAM_INTRO)
     add_to_impecable_music(megaweathertheme)
     add_to_impecable_music(dbz_prologueII)
+    add_to_impecable_music(BALROG_STAGE)
+    add_to_impecable_music(RYU_STAGE)
+    add_to_impecable_music(LITTLEROOT_TOWN)
+    add_to_impecable_music(PEGASUS_FANTASY)
+    add_to_impecable_music(SABRE_WULF)
 
     profiles:
     dw profile_defaults_CE

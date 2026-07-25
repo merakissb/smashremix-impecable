@@ -1,7 +1,7 @@
 # Contexto del proyecto — para retomar en nuevas sesiones
 
 Documento de traspaso. Leer esto da todo el contexto necesario para seguir trabajando sin
-re-derivar lo aprendido. Última actualización: 2026-07-23.
+re-derivar lo aprendido. Última actualización: 2026-07-24.
 
 ---
 
@@ -88,30 +88,41 @@ perfil "Impecable".
 
 ## Estado actual
 
-**17 canciones propias**, todas registradas (order 900-909) y en el perfil Impecable. Todo
-commiteado (git limpio al 2026-07-23).
+**25 canciones propias**, registradas (order 900-917) y en el perfil Impecable. Última tanda:
+2026-07-24 (13 archivos `_smash`: 8 reemplazos + 5 nuevas).
 
-| Canción | file_name | Juego | Notas |
-|---|---|---|---|
-| Cammy's Stage | CAMMY_STAGE | SSF2 | ok |
-| Ken's Stage | KEN_STAGE | SSF2 | tiene priority_override; usuario reportó que **no loopea** (pendiente, ver abajo) |
-| Trunks Battle | TRUNKS_BATTLE | Butouden 3 | mezcla desbalanceada (bajo fuerte, fondo bajo); batería se pierde al reexportar (parche prog 0→18 en 0x22cb) |
-| Rhythmical Bustle | RHYTMICAL_BUSTLE | Melty Blood | ok (nombre sin la 'h' de Rhythmical, a propósito) |
-| We Gotta Power | DBZ_WEGOTTAPOWER | DBZ | volumen subido a mediana 117 |
-| Dan Dan Kokoro Hikareteku | DAN_DAN | DBGT | ok |
-| Butouden 3 Credits | DBZ_SB3_CREDITS_ROLL | Butouden 3 | volumen subido a mediana 117 |
-| Mega Man 3 Title | MEGAMAN3_TITLE | Mega Man 3 | ok (reexportado con loop) |
-| Mega Man 7 Intro | MEGAMAN7_INTRO | Mega Man 7 | batería en canal 5; dos líneas de bajo |
-| Guile's Stage | GUILE_STAGE | SSF2 | volumen normalizado 127→117; **sin pista de percusión** (confirmar si debería tener) |
+| Canción | file_name | Juego | order | Notas |
+|---|---|---|---|---|
+| Cammy's Stage | CAMMY_STAGE | SSF2 | 900 | export de 1 pista fusionada (v. 2026-07-24) |
+| Ken's Stage | KEN_STAGE | SSF2 | 901 | tiene priority_override; usuario reportó que **no loopea** (pendiente, ver abajo) |
+| Trunks Battle | TRUNKS_BATTLE | Butouden 3 | 902 | reemplazado por `trunksbattlevariable2` (mediana vol 82) |
+| Rhythmical Bustle | RHYTMICAL_BUSTLE | Melty Blood | 903 | **sin batería a propósito**: t10 ch9 en prog 16 (Pan Flute), no 18 — decisión del usuario, NO parchear |
+| We Gotta Power | DBZ_WEGOTTAPOWER | DBZ | 904 | volumen subido a mediana 117 |
+| Dan Dan Kokoro Hikareteku | DAN_DAN | DBGT | 905 | ok |
+| Butouden 3 Credits | DBZ_SB3_CREDITS_ROLL | Butouden 3 | 906 | reemplazado (v. ending); mediana vol 127 (usuario pidió no tocar) |
+| Mega Man 3 Title | MEGAMAN3_TITLE | Mega Man 3 | 907 | ok |
+| Mega Man 7 Intro | MEGAMAN7_INTRO | Mega Man 7 | 908 | **bajo restaurado** (Slap + Acoustic Bass), vol 114 |
+| Guile's Stage | GUILE_STAGE | SSF2 | 909 | **ya trae percusión** (t6/t7 ch9 prog 18); mediana vol 100 |
+| Gundam Wing Intro | GUNDAM_INTRO | Gundam Wing | 910 | mediana vol 83 |
+| El Tiempo | megaweathertheme | Megavision | 911 | canal MEGA Chile |
+| Prologue II | dbz_prologueII | DBZ | 912 | ok, 10 loops |
+| Balrog's Stage | BALROG_STAGE | SSF2 | 913 | **nueva** 2026-07-24; 1 pista fusionada |
+| Ryu's Stage | RYU_STAGE | SSF2 | 914 | **nueva**; todo en vol 127 |
+| Littleroot Town | LITTLEROOT_TOWN | Pokemon Ruby & Sapphire | 915 | **nueva**; mediana vol 80 |
+| Pegasus Fantasy | PEGASUS_FANTASY | Saint Seiya | 916 | **nueva**; corta (2.3 KB), vol 127 |
+| Sabre Wulf | SABRE_WULF | Killer Instinct | 917 | **nueva**; tema de Sabrewulf (KI SNES); todo parejo en 100 |
 
-**Juegos agregados** en `midi.asm`: `dbz`, `dbgt`, `megaman3`, `megaman7`, `meltyblood`,
-`ssf2`.
+> Nota: el usuario pidió **NO normalizar volúmenes** en la tanda 2026-07-24 y **dejar los `.bin`
+> tal cual vienen del editor** (no byte-patchear). Respetar salvo que pida lo contrario.
+
+**Juegos agregados** en `midi.asm`: `butouden3`(preexistía), `dbz`, `dbgt`, `megaman3`,
+`megaman7`, `meltyblood`, `ssf2`, `gundamwing`, `megavision`, `saintseiya`, `killerinstinct`.
 
 **Perfil Impecable** (Random Music ON, Menu Music Mario Party, Skip Results ON, SSS Tournament):
-las 10 de arriba + ROCKSOLID, CLOCKTOWER, GANGPLANK, TOWEROFHEAVEN (Luna Ascension), OLE,
-SMB2OVERWORLD, MORRIGAN. Total 17.
+las 18 de arriba + ROCKSOLID, CLOCKTOWER, GANGPLANK, TOWEROFHEAVEN (Luna Ascension), OLE,
+SMB2OVERWORLD, MORRIGAN.
 
-**SRAM REVISION**: `0x010A`. Incrementar en cada cambio de contenido/toggles.
+**SRAM REVISION**: `0x010E`. Incrementar en cada cambio de contenido/toggles.
 
 ---
 

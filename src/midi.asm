@@ -362,6 +362,8 @@ scope MIDI {
     add_game(paneldepon, "Panel de Pon")
     add_game(dream, "Dream: Land of Giants")
     add_game(ssf2, "Super Street Fighter II")
+    add_game(saintseiya, "Saint Seiya")
+    add_game(killerinstinct, "Killer Instinct")
     OS.align(4)
 
     // insert custom midi files
@@ -714,6 +716,11 @@ scope MIDI {
     insert_midi(GUNDAM_INTRO, OS.TRUE, OS.TRUE, "Gundam Wing Intro", gundamwing, 910)
     insert_midi(megaweathertheme, OS.TRUE, OS.TRUE, "El Tiempo", megavision, 911)
     insert_midi(dbz_prologueII, OS.TRUE, OS.TRUE, "Prologue II", dbz, 912)
+    insert_midi(BALROG_STAGE, OS.TRUE, OS.TRUE, "Balrog's Stage", ssf2, 913)
+    insert_midi(RYU_STAGE, OS.TRUE, OS.TRUE, "Ryu's Stage", ssf2, 914)
+    insert_midi(LITTLEROOT_TOWN, OS.TRUE, OS.TRUE, "Littleroot Town", pokemonruby, 915)
+    insert_midi(PEGASUS_FANTASY, OS.TRUE, OS.TRUE, "Pegasus Fantasy", saintseiya, 916)
+    insert_midi(SABRE_WULF, OS.TRUE, OS.TRUE, "Sabre Wulf", killerinstinct, 917)
 
     pushvar origin, base
 
