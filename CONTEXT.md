@@ -161,10 +161,15 @@ loops, volúmenes CC7. Si se necesitan de nuevo, se reescriben rápido — la l�
 
 ## Flujo típico cuando el usuario sube una canción
 
-1. Escanear el `.bin`: programas en rango (1-70), batería en 18, loops presentes, volúmenes.
-2. Si hay programas fuera de rango o batería en 0 → traducir por nombre GM a la tabla y
-   parchear los bytes, o pedir que ajuste en el editor.
-3. Si el volumen está muy alto (127) o bajo (<100) → normalizar CC7 hacia ~117.
-4. Registrar en los 3 archivos (midi.asm, Toggles.asm, SRAM.asm) con order 900+.
-5. Confirmar con el usuario antes de dar por listo. Avisar de parches que se pierden al
-   reexportar.
+> **REGLA (2026-07-26): NO byte-patchear los `.bin`.** El usuario corrige la batería y los
+> instrumentos **en el MIDI mismo** antes de exportar (usa los programas permitidos del sf2,
+> rango 1-70). Los parches de byte automáticos solo rompían los MIDI y no siempre funcionaban
+> (caso RHYTMICAL_BUSTLE_V2). Diagnosticar y reportar SÍ; parchear bytes **solo como emergencia
+> si el usuario lo pide explícitamente**.
+
+1. Escanear el `.bin` con `scripts/check_midi.py`: programas en rango (1-70), batería en 18,
+   loops presentes, volúmenes.
+2. Si hay algo raro (programa fuera de rango, batería en 0, volumen 127/<100) → **reportarlo al
+   usuario**, no tocarlo. Él lo corrige en el MIDI y reexporta. (Byte-patch solo si lo pide.)
+3. Registrar en los 3 archivos (midi.asm, Toggles.asm, SRAM.asm) con order 900+.
+4. Confirmar con el usuario antes de dar por listo.
