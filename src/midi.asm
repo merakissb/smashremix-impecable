@@ -717,6 +717,7 @@ scope MIDI {
     insert_midi(LITTLEROOT_TOWN, OS.TRUE, OS.TRUE, "Littleroot Town", pokemonruby, 913)
     insert_midi(PEGASUS_FANTASY, OS.TRUE, OS.TRUE, "Pegasus Fantasy", saintseiya, 914)
     insert_midi(TOPGEAR_TRACK1, OS.TRUE, OS.TRUE, "Top Gear", topgear, 915)
+    insert_midi(RHYTMICAL_BUSTLE_V2, OS.TRUE, OS.TRUE, "Rhythmical Bustle V2", meltyblood, 916)
 
     pushvar origin, base
 

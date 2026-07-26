@@ -2948,6 +2948,7 @@ scope Toggles {
     add_to_impecable_music(TRUNKS_BATTLE_V1)
     add_to_impecable_music(TRUNKS_BATTLE_V2)
     add_to_impecable_music(RHYTMICAL_BUSTLE)
+    add_to_impecable_music(RHYTMICAL_BUSTLE_V2)
     add_to_impecable_music(DAN_DAN)
     add_to_impecable_music(DBZ_SB3_CREDITS_ROLL)
     add_to_impecable_music(MEGAMAN3_TITLE)
