@@ -14,3 +14,6 @@ build/original/*.txt
 
 # Python (scripts)
 *.pyc
+
+# Rom Hacks
+*Impecable Edition v2.0.1.z64
